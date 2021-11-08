@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigator from '../src/components/Navigation/Navigator.jsx'
+import Navigator from './Navigation/Navigator.jsx'
 
 
 function App() {
