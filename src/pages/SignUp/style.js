@@ -24,9 +24,6 @@ export const DivBox = styled.div`
     box-sizing: border-box;
     box-shadow: 10px 10px 10px #CCCCCC;
 
-
-
-
     > .welcome-title {
         font-family: Roboto;
         font-style: normal;
@@ -91,7 +88,7 @@ export const DivBox = styled.div`
 
     @media (max-width: 525px) {
         width: 95%;
-        height: 30%;
+        height: 40%;
     }
 `;
 

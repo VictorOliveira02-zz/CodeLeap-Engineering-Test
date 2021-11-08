@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 
-import { INDEX, SIGNUP, MAINSCREEN, } from "../actions/routes";
+import { INDEX, SIGNUP, MAINSCREEN, } from "../actions/routes/routes.js";
 
 import Index from "../pages/Index/index";
 import SignUp from "../pages/SignUp/index";

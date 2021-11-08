@@ -1,10 +1,22 @@
 import React from 'react';
- 
+import { Body, Container, Header, CreatePostDiv, Post } from './style';
+
 const MainScreen = () => {
     return (
-        <div>
-            <h1>Hello MainScreen</h1>
-        </div>
+        <>
+            <Body>
+                <Container>
+                    <Header>
+                        <h1 className="title-header">CodeLeap Network</h1>
+                    </Header>
+
+                    <CreatePostDiv></CreatePostDiv>
+
+                    <Post></Post>
+
+                </Container>
+            </Body>
+        </>
     );
 }
 
