@@ -17,7 +17,7 @@ const Index = () => {
 
     setTimeout(() => {
         handleSignup()
-    }, 1000 * 5);
+    }, 1000 * 6);
 
     return (
         <Div>

@@ -48,17 +48,15 @@ export const DivBox = styled.div`
     > .username-input{
         width: 98%;
         height: 28px;
-        left: 741px;
-        top: 536px;
+
 
         background: #FFFFFF;
         border: 1px solid #777777;
         box-sizing: border-box;
         border-radius: 4px;
         ::placeholder {
-            width: 58px;
-            height: 16px;
             padding-left: 5px;
+
             font-family: Roboto;
             font-style: normal;
             font-weight: normal;
@@ -77,13 +75,18 @@ export const DivBox = styled.div`
         font-family: Roboto;
         font-style: normal;
         font-weight: bold;
-        font-size: 16px;
-        line-height: 19px;
+        font-size: 1em;
+        line-height: 1.188em;
         color: #FFFFFF;
         
         margin-left: 74%;
         margin-top: 18px;
         cursor: pointer;
+        @media (max-width: 315px) {
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 15px;
+        }
     }
 
     @media (max-width: 525px) {
