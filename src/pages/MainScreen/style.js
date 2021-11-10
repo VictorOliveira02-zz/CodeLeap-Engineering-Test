@@ -33,8 +33,9 @@ export const Header = styled.div`
         line-height: 1.625em;
         color: #FFFFFF;
         @media (max-width: 768px) {
-            font-size: 1em;
-            line-height: 1em;
+            font-size: 1.2em;
+            line-height: 1.2em;
+            text-align: center;
         }
     }
 `
@@ -58,8 +59,8 @@ export const CreatePostForm = styled.form`
         line-height: 1.7em;
         color: #000000;
         @media (max-width: 768px) {
-            font-size: 1em;
-            line-height: 1em;
+            font-size: 1.2em;
+            line-height: 1.2em;
         }
 
     }
@@ -80,7 +81,7 @@ export const CreatePostForm = styled.form`
     > .input-create-post {
         width: 100%;
         height: 28px;
-
+        margin-bottom: 20px;
         background: #FFFFFF;
         border: 1px solid #777777;
         box-sizing: border-box;
@@ -191,7 +192,7 @@ export const Post = styled.div`
 
         > .header-post-title{
             margin-left: 20px;
-
+            padding: 15px;
             font-family: Roboto;
             font-style: normal;
             font-weight: bold;
@@ -213,8 +214,8 @@ export const Post = styled.div`
             justify-content: flex-end;
             margin-right: 30px;
             > .header-post-btn{
-                width: 5%;
-                height: 5%;
+                width: 1px;
+                height: 1px;
 
                 background: transparent;
                 border: none;

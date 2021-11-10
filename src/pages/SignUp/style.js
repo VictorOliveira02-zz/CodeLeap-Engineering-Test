@@ -13,7 +13,7 @@ export const Div = styled.div`
     justify-content: center;
 `;
 
-export const DivBox = styled.div`
+export const FormBox = styled.form`
     width: 500px;
     height: 220px;
     margin-top: 200px;
@@ -48,6 +48,7 @@ export const DivBox = styled.div`
     > .username-input{
         width: 98%;
         height: 28px;
+        margin-bottom: 20px;
 
 
         background: #FFFFFF;
@@ -68,24 +69,48 @@ export const DivBox = styled.div`
     }
 
     > .sign-up-btn{
-        width: 24%;
+        width: 22%;
         height: 33px;
-
+        margin-top: 20px;
+        margin-left: 76%;
+        cursor: pointer;
         background: #000000;
+
         font-family: Roboto;
         font-style: normal;
         font-weight: bold;
         font-size: 1em;
         line-height: 1.188em;
         color: #FFFFFF;
-        
-        margin-left: 74%;
-        margin-top: 18px;
-        cursor: pointer;
-        @media (max-width: 315px) {
-            width: 100%;
+
+        @media (max-width: 785px) {
             margin: 0 auto;
-            margin-top: 15px;
+            width: 100%;
+        }
+    }
+
+    > .sign-up-btn-disabled{
+        width: 22%;
+        height: 33px;
+        margin-top: 20px;
+        margin-left: 76%;
+        background: #777777;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1em;
+        line-height: 1.188em;
+        color: #FFFFFF;
+        cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>❌</text></svg>") 16 0,auto; /*!emojicursor.app*/
+        :hover {
+                color: #AEAFB2;
+        }
+
+
+        @media (max-width: 785px) {
+            margin: 0 auto;
+            width: 100%;
         }
     }
 

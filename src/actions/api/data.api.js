@@ -28,7 +28,6 @@ export default class postApi {
         return req.data;
     };
 
-
     static deletePost = async (id) => {
         const req = await api.delete(`/careers/${id}/`);
         return req.data

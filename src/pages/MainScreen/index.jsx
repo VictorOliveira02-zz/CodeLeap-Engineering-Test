@@ -4,20 +4,20 @@ import { Body, Container, Header, CreatePostForm, Post } from './style';
 import postApi from '../../actions/api/data.api'
 import { formatDistanceToNow } from 'date-fns'
 
-import trash from '../../assets/images/trash.svg'
-import edit from '../../assets/images/edit.svg'
+
+import ModalEdit from '../../components/ModalEdit/index'
+import ModalDelete from '../../components/ModalDelete/index'
 
 const InitialState = {
-    "username": "",
-    "title": "",
-    "content": "",
+    username: "",
+    title: "",
+    content: "",
 }
 
 
 const MainScreen = () => {
     const [posts, setPosts] = useState()
     const [newPost, setNewPost] = useState({ ...InitialState })
-    const [loading, setLoading] = useState(false)
 
     const handleTime = (date) => {
         const result = formatDistanceToNow(
@@ -40,10 +40,8 @@ const MainScreen = () => {
 
     const loadPosts = async () => {
         try {
-            setLoading(true)
             const response = await postApi.getAllPosts()
             setPosts(response)
-            setLoading(false)
         } catch (error) {
             console.log(error)
         }
@@ -61,7 +59,7 @@ const MainScreen = () => {
                         <h1 className="title-header">CodeLeap Network</h1>
                     </Header>
 
-                    <CreatePostForm onSubmit={newPosts} loading={loading}>
+                    <CreatePostForm onSubmit={newPosts}>
                         <h1 className="title-create-post">Hey John, What’s on your mind?</h1>
 
                         <p className="p-create-post">Title</p>
@@ -87,8 +85,8 @@ const MainScreen = () => {
                             <div className="header-post">
                                 <h1 className="header-post-title">{post.title}</h1>
                                 <div className="header-btns-post">
-                                    <button type="submit" className="header-post-btn"><img src={trash} alt="trash icon" /></button>
-                                    <button type="buttom" className="header-post-btn"><img src={edit} alt="edit icon" /></button>
+                                    <ModalDelete loadPost={() => loadPosts()} id={post.id} />
+                                    <ModalEdit loadPost={() => loadPosts()} id={post.id} postTitle={post.title} postContent={post.content} />
                                 </div>
                             </div>
 
