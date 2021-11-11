@@ -13,7 +13,7 @@ export const Div = styled.div`
     justify-content: center;
 `;
 
-export const FormBox = styled.form`
+export const DivBox = styled.div`
     width: 500px;
     height: 220px;
     margin-top: 200px;
