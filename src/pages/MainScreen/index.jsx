@@ -20,6 +20,7 @@ const MainScreen = () => {
 
     const [posts, setPosts] = useState()
     const [newPost, setNewPost] = useState({ ...InitialState })
+    const showModals = true;
 
     const handleTime = (date) => {
         const result = formatDistanceToNow(
@@ -87,8 +88,12 @@ const MainScreen = () => {
                             <div className="header-post">
                                 <h1 className="header-post-title">{post.title}</h1>
                                 <div className="header-btns-post">
-                                    <ModalDelete loadPost={() => loadPosts()} id={post.id} />
-                                    <ModalEdit loadPost={() => loadPosts()} id={post.id} postTitle={post.title} postContent={post.content} />
+                                    {showModals === false &&
+                                        <ModalDelete loadPost={() => loadPosts()} id={post.id} />
+                                    }
+                                    {showModals === false &&
+                                        <ModalEdit loadPost={() => loadPosts()} id={post.id} postTitle={post.title} postContent={post.content} />
+                                    }
                                 </div>
                             </div>
 
