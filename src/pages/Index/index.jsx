@@ -21,8 +21,7 @@ const Index = () => {
 
     return (
         <Div>
-            <img src={Logo} alt="codeleap logo" />
-            <br />
+            <img className="logo-img" src={Logo} alt="codeleap logo" />
             <BeatLoader size={20} />
         </Div>
     );

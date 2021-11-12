@@ -1,20 +1,21 @@
 import styled from 'styled-components'
 
 export const Body = styled.div`
-    position: absolute;
     width: 100%;
     height: 150%;
     left: 0px;
     top: 0px;
     background: #DDDDDD;
-
 `;
 
 export const Container = styled.div`
-    width: 70%;
-    height: 99%;
+    width: 60%;
+    height: 90%;
     margin: 0 auto;
     background: #FFFFFF;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 
@@ -33,8 +34,7 @@ export const Header = styled.div`
         line-height: 1.625em;
         color: #FFFFFF;
         @media (max-width: 768px) {
-            font-size: 1.2em;
-            line-height: 1.2em;
+            font-size: 1.4em;
             text-align: center;
         }
     }
@@ -129,7 +129,7 @@ export const CreatePostForm = styled.form`
         margin-left: 85%;
         cursor: pointer;
         background: #000000;
-
+        
         font-family: Roboto;
         font-style: normal;
         font-weight: bold;
@@ -202,8 +202,7 @@ export const Post = styled.div`
             color: #FFFFFF;
 
             @media (max-width: 768px) {
-            font-size: 1em;
-            line-height: 1em;
+            font-size: 1.3em;
             }
             
         }
@@ -213,10 +212,10 @@ export const Post = styled.div`
             flex-direction: row;
             justify-content: flex-end;
             margin-right: 30px;
+            padding: 3px;
             > .header-post-btn{
                 width: 1px;
                 height: 1px;
-
                 background: transparent;
                 border: none;
                 cursor:pointer;
@@ -235,7 +234,7 @@ export const Post = styled.div`
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-left: 20px;
+        margin-left: 30px;
         margin-top: 15px;
         
         > .div-info-username-post{
@@ -267,6 +266,8 @@ export const Post = styled.div`
         height: 55%;
         margin: 0 auto;
         margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 30px;
 
         font-family: Roboto;
         font-style: normal;

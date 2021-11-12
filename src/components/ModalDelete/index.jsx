@@ -36,8 +36,8 @@ function ModalDelete(props) {
         <Button inverted color='red' onClick={() => setOpen(false)}>
           <Icon name='remove' /> Cancel
         </Button>
-        <Button color='green' inverted onClick={() => delPost(id)}>
-          <Icon name='checkmark' /> Ok,  DELETE.
+        <Button color='black'  onClick={() => delPost(id)}>
+          <Icon name='checkmark' /> OK
         </Button>
       </Modal.Actions>
     </Modal>
