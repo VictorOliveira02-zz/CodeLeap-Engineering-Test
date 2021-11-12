@@ -85,7 +85,7 @@ export const DivBox = styled.div`
 
         @media (max-width: 785px) {
             margin: 0 auto;
-            width: 100%;
+            width: 98%;
         }
     }
 
@@ -110,7 +110,7 @@ export const DivBox = styled.div`
 
         @media (max-width: 785px) {
             margin: 0 auto;
-            width: 100%;
+            width: 98%;
         }
     }
 
