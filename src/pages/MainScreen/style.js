@@ -267,8 +267,7 @@ export const Post = styled.div`
         margin: 0 auto;
         margin-top: 15px;
         margin-bottom: 15px;
-        margin-left: 30px;
-
+        
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
