@@ -20,7 +20,7 @@ const MainScreen = () => {
 
     const [posts, setPosts] = useState()
     const [newPost, setNewPost] = useState({ ...InitialState })
-    const showModals = false;
+    const showModals = true;
 
     const handleTime = (date) => {
         const result = formatDistanceToNow(
