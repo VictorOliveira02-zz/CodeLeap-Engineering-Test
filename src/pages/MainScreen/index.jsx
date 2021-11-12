@@ -20,7 +20,6 @@ const MainScreen = () => {
 
     const [posts, setPosts] = useState()
     const [newPost, setNewPost] = useState({ ...InitialState })
-    const showModals = true;
 
     const handleTime = (date) => {
         const result = formatDistanceToNow(
@@ -53,7 +52,7 @@ const MainScreen = () => {
     useEffect(() => {
         loadPosts()
     }, [])
-
+    console.log(posts)
     return (
         <>
             <Body>
@@ -88,10 +87,10 @@ const MainScreen = () => {
                             <div className="header-post">
                                 <h1 className="header-post-title">{post.title}</h1>
                                 <div className="header-btns-post">
-                                    {showModals === false &&
+                                    {user === post.username &&
                                         <ModalDelete loadPost={() => loadPosts()} id={post.id} />
                                     }
-                                    {showModals === false &&
+                                    {user === post.username &&
                                         <ModalEdit loadPost={() => loadPosts()} id={post.id} postTitle={post.title} postContent={post.content} />
                                     }
                                 </div>
