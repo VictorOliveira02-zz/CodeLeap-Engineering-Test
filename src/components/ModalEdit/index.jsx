@@ -21,7 +21,7 @@ function ModalEdit(props) {
     try {
       const response = await postApi.updatePost(id, updatePost.title, updatePost.content)
       setUpdatePost(response)
-      loadPost()
+      await loadPost()
     } catch (error) {
       console.log(error)
     }

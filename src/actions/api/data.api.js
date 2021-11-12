@@ -1,9 +1,6 @@
-import Axios from "axios";
 import api from "./api";
 
 export default class postApi {
-    static getCancelToken = () => Axios.CancelToken.source();
-
     static getAllPosts = async () => {
         const req = await api.get("/careers/");
         return req.data;

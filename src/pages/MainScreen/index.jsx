@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Body, Container, Header, CreatePostForm, Post } from './style';
+import { formatDistanceToNow } from 'date-fns'
+import { useSelector } from 'react-redux'
 
 import postApi from '../../actions/api/data.api'
-import { formatDistanceToNow } from 'date-fns'
 
-import { useSelector } from 'react-redux'
+import { Body, Container, Header, CreatePostForm, Post } from './style';
 
 import ModalEdit from '../../components/ModalEdit/index'
 import ModalDelete from '../../components/ModalDelete/index'

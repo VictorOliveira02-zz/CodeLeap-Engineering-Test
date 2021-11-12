@@ -13,7 +13,7 @@ function ModalDelete(props) {
     try {
       const response = await postApi.deletePost(id)
       console.log(response)
-      loadPost()
+      await loadPost()
     } catch (error) {
       console.log(error)
     }
@@ -36,7 +36,7 @@ function ModalDelete(props) {
         <Button inverted color='red' onClick={() => setOpen(false)}>
           <Icon name='remove' /> Cancel
         </Button>
-        <Button color='black'  onClick={() => delPost(id)}>
+        <Button color='black' onClick={() => delPost(id)}>
           <Icon name='checkmark' /> OK
         </Button>
       </Modal.Actions>
