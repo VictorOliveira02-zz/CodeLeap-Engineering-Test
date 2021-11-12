@@ -18,6 +18,7 @@ The goal is to create a very simple application that will perform basic CRUD fun
 
 * [React Js](https://pt-br.reactjs.org/)
 * [Axios](https://www.npmjs.com/package/axios)
+* [Redux](https://redux.js.org/)
 * [VS Code](https://code.visualstudio.com/)
 * [Figma Template](https://www.figma.com/file/0OQWLQmU14SF2cDhHPJ2sx/CodeLeap-Engineering-Test?node-id=0%3A1)
 
