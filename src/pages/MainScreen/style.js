@@ -40,7 +40,7 @@ export const Header = styled.div`
     }
 `
 
-export const CreatePostForm = styled.form`
+export const CreatePostForm = styled.div`
     width: 90%;
     height: 35%;
     margin: 0 auto;

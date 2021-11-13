@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import postApi from '../../actions/api/data.api'
 
 import { Body, Container, Header, CreatePostForm, Post } from './style';
+import { Dimmer, Loader } from 'semantic-ui-react'
 
 import ModalEdit from '../../components/ModalEdit/index'
 import ModalDelete from '../../components/ModalDelete/index'
@@ -20,6 +21,7 @@ const MainScreen = () => {
 
     const [posts, setPosts] = useState()
     const [newPost, setNewPost] = useState({ ...InitialState })
+    const [loading, setLoading] = useState(false)
 
     const handleTime = (date) => {
         const result = formatDistanceToNow(
@@ -32,9 +34,13 @@ const MainScreen = () => {
 
     const newPosts = async () => {
         try {
+            setLoading(true)
             const response = await postApi.createPost(user, newPost.title, newPost.content)
             setNewPost(response)
+            await loadPosts()
+            setLoading(false)
         } catch (error) {
+            setLoading(false)
             console.log(error)
         }
     }
@@ -42,9 +48,13 @@ const MainScreen = () => {
 
     const loadPosts = async () => {
         try {
+            setLoading(true)
             const response = await postApi.getAllPosts()
             setPosts(response)
+            setNewPost({ ...InitialState })
+            setLoading(false)
         } catch (error) {
+            setLoading(false)
             console.log(error)
         }
     }
@@ -52,16 +62,16 @@ const MainScreen = () => {
     useEffect(() => {
         loadPosts()
     }, [])
-    console.log(posts)
+
     return (
         <>
-            <Body>
+            <Body loading={loading}>
                 <Container>
                     <Header>
                         <h1 className="title-header">CodeLeap Network</h1>
                     </Header>
 
-                    <CreatePostForm onSubmit={newPosts}>
+                    <CreatePostForm>
                         <h1 className="title-create-post">Hey {user}, What’s on your mind?</h1>
 
                         <p className="p-create-post">Title</p>
@@ -75,7 +85,7 @@ const MainScreen = () => {
                         />
 
                         {newPost.title.length > 0 && newPost.content.length > 0 ?
-                            <button className="button-create-post" type="submit">CREATE</button>
+                            <button className="button-create-post" type="button" onClick={() => newPosts()} >CREATE</button>
                             :
                             <button className="button-create-post-disabled" disabled
                                 title="Please, fill in the title and content fields!">CREATE</button>
@@ -102,10 +112,16 @@ const MainScreen = () => {
                             </div>
 
                             <div className="content-post">{post.content}</div>
+
+
                         </Post>
                     ))}
                 </Container>
             </Body>
+
+            <Dimmer inverted active={loading} page>
+                <Loader content="Loading..." />
+            </Dimmer>
         </>
     );
 }

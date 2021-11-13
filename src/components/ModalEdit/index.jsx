@@ -21,6 +21,7 @@ function ModalEdit(props) {
     try {
       const response = await postApi.updatePost(id, updatePost.title, updatePost.content)
       setUpdatePost(response)
+      setOpen(false)
       await loadPost()
     } catch (error) {
       console.log(error)
@@ -35,7 +36,7 @@ function ModalEdit(props) {
       trigger={<button type="buttom" className="header-post-btn"><img src={edit} alt="edit icon" /></button>}
 
     >
-      <CreatePostForm onSubmit={updatePosts}>
+      <CreatePostForm>
         <h1 className="title-create-post">Edit Item</h1>
 
         <p className="p-create-post">Title</p>
@@ -49,7 +50,7 @@ function ModalEdit(props) {
         />
 
         {updatePost.title.length > 0 && updatePost.content.length > 0 ?
-          <button className="button-create-post" type="submit">SAVE</button>
+          <button className="button-create-post" type="button" onClick={() => updatePosts()}>SAVE</button>
           :
           <button className="button-create-post-disabled" disabled
             title="Please, fill in the title and content fields!">SAVE</button>
