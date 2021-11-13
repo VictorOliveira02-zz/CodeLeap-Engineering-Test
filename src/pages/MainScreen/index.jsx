@@ -82,9 +82,9 @@ const MainScreen = () => {
                             style={{ color: 'white', cursor: 'pointer' }}
                             flipped='horizontally'
                             name='sign-out'
-                            size='big' 
+                            size='big'
                             title='Log-Out'
-                            />
+                        />
                     </Header>
 
                     <CreatePostForm>

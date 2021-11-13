@@ -19,7 +19,7 @@ const SignUp = () => {
         dispatch(setUserName(username))
         history.push(MAINSCREEN)
     }
-    
+
     return (
         <Div>
             <DivBox>
