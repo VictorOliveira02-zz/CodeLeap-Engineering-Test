@@ -33,7 +33,7 @@ const SignUp = () => {
                 {userLogin.username.length > 0 ?
                     <button onClick={() => SignUpForm(userLogin.username)} className="sign-up-btn">ENTER</button>
                     :
-                    <button disabled type="submit" className="sign-up-btn-disabled"
+                    <button disabled className="sign-up-btn-disabled"
                         title="Please, fill in the username field!">ENTER</button>
                 }
 

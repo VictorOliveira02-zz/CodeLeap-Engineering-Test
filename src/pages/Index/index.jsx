@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useHistory } from "react-router-dom";
-import { SIGNUP, } from "../../actions/routes/routes.js";
+import { SIGNUP } from "../../actions/routes/routes.js";
 
 import BeatLoader from "react-spinners/BeatLoader";
 

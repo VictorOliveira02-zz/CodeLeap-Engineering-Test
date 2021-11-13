@@ -33,7 +33,7 @@ function ModalEdit(props) {
       open={open}
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
-      trigger={<button type="buttom" className="header-post-btn"><img src={edit} alt="edit icon" /></button>}
+      trigger={<button type="button" className="header-post-btn"><img src={edit} alt="edit icon" /></button>}
 
     >
       <CreatePostForm>

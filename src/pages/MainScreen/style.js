@@ -23,6 +23,7 @@ export const Header = styled.div`
     width: 100%;
     height: 80px;
     background: #000000;
+    display: flex;
 
     > .title-header {
         margin: 0 auto;
@@ -223,6 +224,11 @@ export const Post = styled.div`
                 margin-right: 5px;
                 :hover {
                     transform: scale(1.3);
+                }
+                @media (max-width: 768px) {
+                    :hover{
+                        transform: none;
+                    }
                 }
 
             }

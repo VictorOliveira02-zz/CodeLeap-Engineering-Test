@@ -5,10 +5,13 @@ import { useSelector } from 'react-redux'
 import postApi from '../../actions/api/data.api'
 
 import { Body, Container, Header, CreatePostForm, Post } from './style';
-import { Dimmer, Loader } from 'semantic-ui-react'
+import { Dimmer, Loader, Icon } from 'semantic-ui-react'
 
 import ModalEdit from '../../components/ModalEdit/index'
 import ModalDelete from '../../components/ModalDelete/index'
+
+import { useHistory } from "react-router-dom";
+import { INDEX } from "../../actions/routes/routes.js";
 
 const InitialState = {
     title: "",
@@ -18,6 +21,7 @@ const InitialState = {
 
 const MainScreen = () => {
     const user = useSelector(state => state.username)
+    const history = useHistory();
 
     const [posts, setPosts] = useState()
     const [newPost, setNewPost] = useState({ ...InitialState })
@@ -30,6 +34,10 @@ const MainScreen = () => {
             { includeSeconds: true }
         )
         return result
+    }
+
+    const logOut = () => {
+        history.push(INDEX);
     }
 
     const newPosts = async () => {
@@ -69,6 +77,14 @@ const MainScreen = () => {
                 <Container>
                     <Header>
                         <h1 className="title-header">CodeLeap Network</h1>
+                        <Icon
+                            onClick={() => logOut()}
+                            style={{ color: 'white', cursor: 'pointer' }}
+                            flipped='horizontally'
+                            name='sign-out'
+                            size='big' 
+                            title='Log-Out'
+                            />
                     </Header>
 
                     <CreatePostForm>

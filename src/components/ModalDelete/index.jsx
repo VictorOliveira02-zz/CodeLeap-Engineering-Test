@@ -25,7 +25,7 @@ function ModalDelete(props) {
       open={open}
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
-      trigger={<button type="submit" className="header-post-btn"><img src={trash} alt="trash icon" /></button>}
+      trigger={<button type="button" className="header-post-btn"><img src={trash} alt="trash icon" /></button>}
     >
       <Modal.Content>
         <Modal.Description>
