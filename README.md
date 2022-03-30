@@ -1,7 +1,7 @@
 # CodeLeap Engineering Test - Junior Developer
 ![codeleap logo](https://github.com/gustavosgdev/codeleap-challenge/blob/main/assets/codeleap-logo.png)
 
-## Project developed during the Front-End Junior admission process by [CodeLeap](https://www.codeleap.co.uk/) - 11/2021
+## Project developed during the Front-End Junior admission process by [CodeLeap](https://www.codeleap.co.uk/) - 3/2022
 
 ## 🚀 Goal
 
@@ -24,6 +24,6 @@ The goal is to create a very simple application that will perform basic CRUD fun
 
 
 ## ✒️ Author
-* **Victor Alves de Oliveira** - Bachelor of Information Systems - Federal University of Viçosa (UFV-CRP) - victoralvees17@gmail.com
+* **Victor Alves de Oliveira** - victoralvees17@gmail.com
 
 ---
