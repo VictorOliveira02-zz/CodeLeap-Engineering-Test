@@ -1,19 +1,16 @@
 import styled from 'styled-components'
 
-export const Div = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0px;
+export const Container = styled.div`
+    width: 100vw;
+    height: 100vh;
+    
     background: #DDDDDD;
+
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
 `;
 
-export const DivBox = styled.div`
+export const Div = styled.div`
     width: 500px;
     height: 220px;
     margin-top: 200px;
@@ -21,49 +18,29 @@ export const DivBox = styled.div`
 
     background: #FFFFFF;
     border: 2px solid #CCCCCC;
-    box-sizing: border-box;
     box-shadow: 10px 10px 10px #CCCCCC;
 
-    > .welcome-title {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 1.25em;
-        line-height: 1.563em;
-
-        margin-bottom: 18px;
+    @media (max-width: 525px) {
+        width: 95%;
+        height: 30%;
     }
 
-    > .welcome-subtitle {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 1em;
-        line-height: 19px;
-
-        margin-bottom: 15px;
-        color: #000000;
+    > .welcome-title {
+        font-size: 1.25em;
+        margin-bottom: 18px;
     }
 
     > .username-input{
         width: 98%;
         height: 28px;
-        margin-bottom: 20px;
-
 
         background: #FFFFFF;
         border: 1px solid #777777;
-        box-sizing: border-box;
         border-radius: 4px;
+        margin-bottom: 18px;
+        
         ::placeholder {
             padding-left: 5px;
-
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 16px;
-
             color: #CCCCCC;
         }
     }
@@ -76,16 +53,13 @@ export const DivBox = styled.div`
         cursor: pointer;
         background: #000000;
 
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: bold;
         font-size: 1em;
         line-height: 1.188em;
         color: #FFFFFF;
 
         @media (max-width: 785px) {
-            margin: 0 auto;
             width: 98%;
+            margin-top: 10px ;
         }
     }
 
@@ -96,9 +70,6 @@ export const DivBox = styled.div`
         margin-left: 76%;
         background: #777777;
 
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: bold;
         font-size: 1em;
         line-height: 1.188em;
         color: #FFFFFF;
@@ -112,11 +83,6 @@ export const DivBox = styled.div`
             margin: 0 auto;
             width: 98%;
         }
-    }
-
-    @media (max-width: 525px) {
-        width: 95%;
-        height: 40%;
     }
 `;
 

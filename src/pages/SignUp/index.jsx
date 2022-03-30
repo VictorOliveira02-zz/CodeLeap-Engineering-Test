@@ -6,7 +6,7 @@ import { MAINSCREEN } from '../../Navigation/routes';
 import { useDispatch } from 'react-redux'
 import { setUserName } from '../../actions/action/username.action.js'
 
-import { Div, DivBox } from "./style"
+import { Container, Div } from "./style"
 
 const SignUp = () => {
     const history = useHistory();
@@ -21,10 +21,10 @@ const SignUp = () => {
     }
 
     return (
-        <Div>
-            <DivBox>
+        <Container>
+            <Div>
                 <h1 className="welcome-title">Welcome to CodeLeap Network!</h1>
-                <p className="welcome-subtitle">Please enter your username</p>
+                <p>Please, enter your username</p>
 
                 <input className="username-input" type="text" placeholder="John doe" required
                     value={userLogin.username} onChange={(e) => setUserLogin({ ...userLogin, username: e.target.value })}
@@ -37,8 +37,8 @@ const SignUp = () => {
                         title="Please, fill in the username field!">ENTER</button>
                 }
 
-            </DivBox>
-        </Div>
+            </Div>
+        </Container>
     );
 }
 

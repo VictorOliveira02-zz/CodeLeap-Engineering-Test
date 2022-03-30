@@ -9,3 +9,45 @@ body {
   background: #dddddd;
   color: #000;
 }
+
+@media (max-width: 420px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+@media (min-width: 421px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (min-width: 820px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media (min-width: 1240px) {
+  html {
+    font-size: 106.25%;
+  }
+}
+
+@media (min-width: 1660px) {
+  html {
+    font-size: 112.5%;
+  }
+}
+
+@media (min-width: 1820px) {
+  html {
+    font-size: 125%;
+  }
+}
+
+@media (min-width: 2340px) {
+  html {
+    font-size: 150%;
+  }
+}

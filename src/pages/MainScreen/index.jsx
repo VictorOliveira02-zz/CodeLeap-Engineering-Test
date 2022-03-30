@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import createPost from '../../actions/api/post'
 import getAllPosts from '../../actions/api/get'
 
-import { Body, Container, Header, CreatePostForm, Post } from './style';
+import { Container, Div, Header, CreatePostForm, Post } from './style';
 import { Dimmer, Loader, Icon } from 'semantic-ui-react'
 
 import ModalEdit from '../../components/ModalEdit/index'
@@ -54,7 +54,6 @@ const MainScreen = () => {
         }
     }
 
-
     const loadPosts = async () => {
         try {
             setLoading(true)
@@ -74,8 +73,8 @@ const MainScreen = () => {
 
     return (
         <>
-            <Body loading={loading}>
-                <Container>
+            <Container loading={loading}>
+                <Div>
                     <Header>
                         <h1 className="title-header">CodeLeap Network</h1>
                         <Icon
@@ -133,8 +132,8 @@ const MainScreen = () => {
 
                         </Post>
                     ))}
-                </Container>
-            </Body>
+                </Div>
+            </Container>
 
             <Dimmer inverted active={loading} page>
                 <Loader content="Loading..." />
