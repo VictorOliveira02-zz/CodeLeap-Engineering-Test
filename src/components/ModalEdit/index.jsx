@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
 import { CreatePostForm } from '../../pages/MainScreen/style';
 import { Modal } from 'semantic-ui-react'
 
-import postApi from '../../actions/api/data.api'
-
+import updatePost from '../../actions/api/patch'
 import edit from '../../assets/images/edit.svg'
 
 const InitialState = {
@@ -12,15 +11,15 @@ const InitialState = {
   "content": "",
 }
 
-function ModalEdit(props) {
+const ModalEdit = (props) => {
   const { id, loadPost, postTitle, postContent } = props
   const [open, setOpen] = useState(false)
-  const [updatePost, setUpdatePost] = useState({ ...InitialState })
+  const [updatePostForm, setUpdatePostForm] = useState({ ...InitialState })
 
   const updatePosts = async () => {
     try {
-      const response = await postApi.updatePost(id, updatePost.title, updatePost.content)
-      setUpdatePost(response)
+      const response = await updatePost(id, updatePostForm.title, updatePostForm.content)
+      setUpdatePostForm(response)
       setOpen(false)
       await loadPost()
     } catch (error) {
@@ -41,15 +40,15 @@ function ModalEdit(props) {
 
         <p className="p-create-post">Title</p>
         <input className="input-create-post" type="text" placeholder={postTitle} required
-          value={updatePost.title} onChange={(e) => setUpdatePost({ ...updatePost, title: e.target.value })}
+          value={updatePostForm.title} onChange={(e) => setUpdatePostForm({ ...updatePostForm, title: e.target.value })}
         />
 
         <p className="p-create-post">Content</p>
         <textarea className="text-input-create-post" placeholder={postContent} required
-          value={updatePost.content} onChange={(e) => setUpdatePost({ ...updatePost, content: e.target.value })}
+          value={updatePostForm.content} onChange={(e) => setUpdatePostForm({ ...updatePostForm, content: e.target.value })}
         />
 
-        {updatePost.title.length > 0 && updatePost.content.length > 0 ?
+        {updatePostForm.title.length > 0 && updatePostForm.content.length > 0 ?
           <button className="button-create-post" type="button" onClick={() => updatePosts()}>SAVE</button>
           :
           <button className="button-create-post-disabled" disabled

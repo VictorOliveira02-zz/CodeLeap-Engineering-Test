@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
+
 import { Button, Modal, Icon } from 'semantic-ui-react'
-
 import trash from '../../assets/images/trash.svg'
+import deletePost from '../../actions/api/delete'
 
-import postApi from '../../actions/api/data.api'
-
-function ModalDelete(props) {
+const ModalDelete = (props) => {
   const { id, loadPost } = props
   const [open, setOpen] = useState(false)
 
   const delPost = async (id) => {
     try {
-      const response = await postApi.deletePost(id)
-      console.log(response)
+      await deletePost(id)
       await loadPost()
     } catch (error) {
       console.log(error)

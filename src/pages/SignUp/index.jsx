@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 import { useHistory } from "react-router-dom";
-import { MAINSCREEN } from '../../actions/routes/routes'
+import { MAINSCREEN } from '../../Navigation/routes';
 
 import { useDispatch } from 'react-redux'
 import { setUserName } from '../../actions/action/username.action.js'

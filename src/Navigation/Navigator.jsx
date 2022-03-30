@@ -1,18 +1,18 @@
 import React from "react";
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 
-import { INDEX, SIGNUP, MAINSCREEN, } from "../actions/routes/routes.js";
+import { LOADING_PAGE, SIGNUP, MAINSCREEN, } from "./routes.js";
 
-import Index from "../pages/Index/index";
+import LoadingPage from "../pages/LoadingPage/index";
 import SignUp from "../pages/SignUp/index";
 import MainScreen from "../pages/MainScreen/index";
 
 
-function Navigator() {
+const Navigator = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path={INDEX} exact component={Index} />
+                <Route path={LOADING_PAGE} exact component={LoadingPage} />
                 <Route path={SIGNUP} exact component={SignUp} />
                 <Route path={MAINSCREEN} exact component={MainScreen} />
             </Switch>

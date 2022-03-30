@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { formatDistanceToNow } from 'date-fns'
 import { useSelector } from 'react-redux'
 
-import postApi from '../../actions/api/data.api'
+import createPost from '../../actions/api/post'
+import getAllPosts from '../../actions/api/get'
 
 import { Body, Container, Header, CreatePostForm, Post } from './style';
 import { Dimmer, Loader, Icon } from 'semantic-ui-react'
@@ -11,7 +12,7 @@ import ModalEdit from '../../components/ModalEdit/index'
 import ModalDelete from '../../components/ModalDelete/index'
 
 import { useHistory } from "react-router-dom";
-import { INDEX } from "../../actions/routes/routes.js";
+import { LOADING_PAGE } from "../../Navigation/routes";
 
 const InitialState = {
     title: "",
@@ -37,13 +38,13 @@ const MainScreen = () => {
     }
 
     const logOut = () => {
-        history.push(INDEX);
+        history.push(LOADING_PAGE);
     }
 
     const newPosts = async () => {
         try {
             setLoading(true)
-            const response = await postApi.createPost(user, newPost.title, newPost.content)
+            const response = await createPost(user, newPost.title, newPost.content)
             setNewPost(response)
             await loadPosts()
             setLoading(false)
@@ -57,7 +58,7 @@ const MainScreen = () => {
     const loadPosts = async () => {
         try {
             setLoading(true)
-            const response = await postApi.getAllPosts()
+            const response = await getAllPosts()
             setPosts(response)
             setNewPost({ ...InitialState })
             setLoading(false)
@@ -88,7 +89,7 @@ const MainScreen = () => {
                     </Header>
 
                     <CreatePostForm>
-                        <h1 className="title-create-post">Hey {user}, What’s on your mind?</h1>
+                        <h1 className="title-create-post">Hey {user}, What's on your mind?</h1>
 
                         <p className="p-create-post">Title</p>
                         <input className="input-create-post" type="text" placeholder="Hello World" required
