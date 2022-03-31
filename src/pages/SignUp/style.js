@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-
     background: #DDDDDD;
     width: 100%;
     height: 100%;
@@ -15,8 +14,9 @@ export const Container = styled.div`
 
 export const Div = styled.div`
     width: 500px;
-    height: 220px;
+    height: 30%;
     padding: 20px;
+    min-height: 250px;
 
     background: #FFFFFF;
     border: 2px solid #CCCCCC;
